@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "concurrently": "^7.0.0",
     "express": "^4.17.2",
     "simple-jsx-react": "^1.0.4"
   },
@@ -10,7 +11,8 @@
     "start": "nodemon server.js",
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "dev": "concurrently --kill-others \"npm start\" \"npm run watch\""
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
