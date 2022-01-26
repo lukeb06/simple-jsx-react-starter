@@ -1,23 +1,276 @@
 * {
-    font-family:monospace;
-    box-sizing:border-box;
-    outline:none;
+  font-family: monospace;
+  box-sizing: border-box;
+  outline: none;
 }
 
 body {
-    margin:0;
-    overflow:hidden;
-    width:100vw;
-    height:100vh;
-    background-color:#444;
+  margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: #444;
+
+  transition: background-color 250ms;
 }
 
 #root {
-    width:100%;
-    height:100%;
+  width: 100%;
+  height: 100%;
 }
 
-center {
-    font-size:3rem;
-    color:white;
+#register,
+#login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-box {
+  width: 90%;
+  height: fit-content;
+  max-width: 500px;
+  min-height: 300px;
+  background: #888;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem #333;
+}
+
+#registerForm,
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 2rem;
+  input {
+    border: none;
+    height: 3rem;
+    margin-top: 3rem;
+    background-color: inherit;
+    border-bottom: solid white 1px;
+    color: white;
+    font-size: 1.5rem;
+
+    &::placeholder {
+      color: white;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &[type="submit"] {
+      border: solid white 1px;
+      height: 5rem;
+      padding: 1rem;
+
+      transition: background-color 250ms, transform 125ms;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+#errorText {
+  height: fit-content;
+  padding: 0.5rem 0 0.5rem 0;
+  color: rgb(255, 113, 113);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dummy {
+  display: none;
+}
+
+#loginText,
+#signupText {
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    color: white;
+    a {
+      color: rgb(93, 214, 255);
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+#navbar {
+  height: 80px;
+  background-color: #333;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+
+  align-items: center;
+
+  form {
+    display: flex;
+    flex-grow: 1;
+    #searchInput {
+      font-size: 1.25rem;
+      flex-grow: 1;
+
+      background-color: inherit;
+      border: none;
+      border-bottom: solid white 1px;
+      color: white;
+    }
+  }
+}
+
+.navbar-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+
+  border: none;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.25);
+
+  padding: 15px;
+  margin: 2px;
+
+  transition: background-color 250ms, width 1s, height 1s;
+
+  user-select: none;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar-icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
+}
+
+#settingsButton {
+  svg {
+    stroke: white;
+  }
+}
+
+#logoutButton,
+#searchButton {
+  svg {
+    fill: white;
+  }
+}
+
+#menuButton {
+  & > svg {
+    fill: white;
+    & > path {
+      fill: white;
+    }
+  }
+  z-index: 11;
+}
+
+#menu {
+  display: none;
+}
+
+#menu.open {
+  display: block;
+}
+
+#menuStandBehind {
+  z-index: 10;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#menuContent {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem #111;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  right: 10px;
+  top: 90px;
+  background-color: #555;
+}
+
+.menu-item {
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+
+  border: none;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.25);
+
+  padding: 15px;
+  margin: 2px;
+
+  transition: background-color 250ms;
+
+  user-select: none;
+
+  width: 100%;
+  min-width: fit-content;
+
+  & > div {
+    margin-left: 1rem;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  svg {
+    height: 20px;
+    width: 20px;
+  }
 }
