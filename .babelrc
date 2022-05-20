@@ -1,5 +1,5 @@
 {
-  "plugins": ["@babel/syntax-dynamic-import", "react-hot-loader/babel"],
+  "plugins": ["@babel/syntax-dynamic-import"],
   "presets": [
     "@babel/preset-react"
   ]
