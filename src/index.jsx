@@ -1,12 +1,21 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import $ from "simple-jsx-react"
+import { BrowserRouter } from "react-router-dom"
+import { hydrate, render } from "react-dom"
 
 import App from "./App.jsx"
 
-ReactDOM.render(
-    <>
+const APP = (
+    <BrowserRouter>
         <App />
-    </>,
-    $("#root")
-)
+    </BrowserRouter>
+);
+
+const ROOT = $("#root");
+
+if (ROOT.hasChildNodes()) {
+    hydrate(APP, ROOT);
+} else {
+    render(APP, ROOT);
+}

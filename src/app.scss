@@ -9,7 +9,7 @@ body {
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-    background-color: #444;
+    background-color: grey;
 }
 
 #root {
@@ -20,9 +20,18 @@ body {
     justify-content: center;
 }
 
-center {
-    font-size: 10rem;
+#title {
+    font-size: 8rem;
     color: white;
     font-weight: bold;
-    text-shadow: 0 1rem 1rem black;
+    text-shadow: 0 0 1rem black;
+
+    & a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            color: white;
+        }
+    }
 }
