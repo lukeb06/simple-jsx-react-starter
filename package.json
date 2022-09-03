@@ -8,11 +8,11 @@
   "description": "",
   "name": "simple-jsx-react-starter",
   "scripts": {
+    "dev": "concurrently --kill-others \"npm run watch\" \"npm start\"",
     "start": "node server.js",
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "watch": "webpack --watch",
-    "dev": "concurrently --kill-others \"npm run watch\" \"npm start\"",
     "nodemon": "nodemon server.js"
   },
   "devDependencies": {
