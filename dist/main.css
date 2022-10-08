@@ -1,6 +1,6 @@
-/*!*************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app.scss ***!
-  \*************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/global.scss ***!
+  \****************************************************************************************************************************************************/
 * {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
@@ -34,5 +34,17 @@ body {
   text-decoration: none;
 }
 #title a:hover {
+  color: white;
+}
+
+#subtitle {
+  font-size: 5rem;
+  color: white;
+}
+#subtitle a {
+  color: white;
+  text-decoration: none;
+}
+#subtitle a:hover {
   color: white;
 }

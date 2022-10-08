@@ -4,15 +4,17 @@ import $ from "simple-jsx-react"
 import { BrowserRouter } from "react-router-dom"
 import { hydrate, render } from "react-dom"
 
-import Routes from "./Routes.jsx"
+import App from "./App.jsx"
 
 const APP = (
     <BrowserRouter>
-        <Routes />
+        <App />
     </BrowserRouter>
 );
 
 const ROOT = $("#root");
+
+console.log(ROOT);
 
 if (ROOT.hasChildNodes()) {
     hydrate(APP, ROOT);
