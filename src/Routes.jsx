@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route, Link } from "react-router-dom";
-import "./app.scss"
+import "./global.scss"
 
-const App = () => {
+const Routes = () => {
     return (
         <>
             <Routes>
@@ -21,4 +21,4 @@ const App = () => {
     )
 }
 
-export default App
+export default Routes

@@ -4,11 +4,11 @@ import $ from "simple-jsx-react"
 import { BrowserRouter } from "react-router-dom"
 import { hydrate, render } from "react-dom"
 
-import App from "./App.jsx"
+import Routes from "./Routes.jsx"
 
 const APP = (
     <BrowserRouter>
-        <App />
+        <Routes />
     </BrowserRouter>
 );
 
