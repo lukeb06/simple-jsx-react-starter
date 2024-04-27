@@ -1,0 +1,48 @@
+$accent: #61dafb;
+$dark: #282c34;
+
+@mixin mobile {
+    @media (max-width: 750px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1025px) {
+        @content;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: $dark;
+}
+
+::-webkit-scrollbar-thumb {
+    background: lighten($dark, 10);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: lighten($dark, 15);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: lighten($dark, 20);
+}
+
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    outline: none;
+}
