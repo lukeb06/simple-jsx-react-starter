@@ -1,4 +1,4 @@
-const API_PORT = 3021;
+const API_PORT = 3001;
 const API_URL = `${window.location.protocol}//${window.location.hostname}:${API_PORT}/`;
 const endpoint = (path) => `${API_URL}${path}`;
 
