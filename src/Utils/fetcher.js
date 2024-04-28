@@ -11,7 +11,6 @@ const fetcher = async (path, options={}, textMode=false) => {
         } catch (e) {
             reject(e);
         }
-        
     });
 }
 
