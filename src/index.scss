@@ -67,3 +67,24 @@ body.no-scroll {
 nav > div {
     width: 100%;
 }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.svg-spinner {
+    font-size: inherit;
+
+    svg {
+        color: hsl(var(--primary));
+
+        height: 1em;
+        width: 1em;
+        animation: spin 1s linear infinite;
+    }
+}
