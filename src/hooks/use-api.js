@@ -21,7 +21,6 @@ function useAPI(url) {
                     throw new Error(data.error);
                 }
                 setData(data);
-                console.log(data);
                 setIsLoading(false);
             } catch (error) {
                 setError(error.message);
