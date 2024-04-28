@@ -7,7 +7,9 @@
         "nodemon": "nodemon api.cjs",
         "build": "vite build",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-        "preview": "vite preview",
+        "vite:preview": "vite preview",
+        "preview": "vite preview --host --port 5173",
+        "start": "concurrently --kill-others \"npm run preview\" \"npm run nodemon\"",
         "vite:dev": "vite --host"
     },
     "dependencies": {
