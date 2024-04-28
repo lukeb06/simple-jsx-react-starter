@@ -1,5 +1,4 @@
-$accent: #61dafb;
-$dark: #282c34;
+$background: #333;
 
 @mixin mobile {
     @media (max-width: 750px) {
@@ -25,24 +24,41 @@ $dark: #282c34;
 }
 
 ::-webkit-scrollbar-track {
-    background: $dark;
+    background: $background;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: lighten($dark, 10);
+    background: lighten($background, 10);
     border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: lighten($dark, 15);
+    background: lighten($background, 15);
 }
 
 ::-webkit-scrollbar-thumb:active {
-    background: lighten($dark, 20);
+    background: lighten($background, 20);
 }
 
 * {
-    font-family: sans-serif;
+    // font-family: sans-serif;
     box-sizing: border-box;
-    outline: none;
+    outline: none !important;
+
+    &:focus {
+        outline: none !important;
+    }
+}
+
+body.no-scroll {
+    height: 100vh;
+    overflow: hidden;
+
+    #root {
+        height: 100%;
+    }
+}
+
+nav > div {
+    width: 100%;
 }
