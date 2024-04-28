@@ -19,7 +19,7 @@ import { Button } from '@/Components/ui/button';
 
 const Navbar = () => {
     return (
-        <NavigationMenu className="absolute top-0 p-2 border-b border-border/40">
+        <NavigationMenu className="sticky top-0 p-2 z-50 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <NavigationMenuList className="w-full">
                 <NavigationMenuItem>
                     <Button variant="ghost">

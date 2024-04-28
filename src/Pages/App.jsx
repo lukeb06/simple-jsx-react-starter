@@ -4,11 +4,13 @@ import APIStatus from '../Components/APIStatus.jsx';
 
 const App = () => {
     return (
-        <center className="grid place-items-center h-full">
-            <h1 className="font-bold text-4xl">
-                <APIStatus />
-            </h1>
-        </center>
+        <>
+            <center className="grid place-items-center h-full my-4">
+                <h1 className="font-bold text-4xl">
+                    <APIStatus />
+                </h1>
+            </center>
+        </>
     );
 };
 

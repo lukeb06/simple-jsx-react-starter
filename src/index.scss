@@ -57,6 +57,11 @@ body.no-scroll {
     #root {
         height: 100%;
     }
+
+    nav {
+        position: absolute !important;
+        top: 0 !important;
+    }
 }
 
 nav > div {
