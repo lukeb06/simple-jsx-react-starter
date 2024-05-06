@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useAPI from '@/hooks/use-api.js';
 
-import LoadSpinner from '@/Components/LoadSpinner.jsx';
+import LoadSpinner from '@/components/LoadSpinner.jsx';
 
 const APIStatus = () => {
     const { data, isLoading, error } = useAPI('status');

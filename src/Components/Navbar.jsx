@@ -10,7 +10,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
     NavigationMenuViewport,
-} from '@/Components/ui/navigation-menu';
+} from '@/components/ui/navigation-menu';
 
 import {
     Sheet,
@@ -19,12 +19,12 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-} from '@/Components/ui/sheet';
+} from '@/components/ui/sheet';
 
-import { navigationMenuTriggerStyle } from '@/Components/ui/navigation-menu';
+import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
 
-import { ModeToggle } from '@/Components/mode-toggle.jsx';
-import { Button } from '@/Components/ui/button';
+import { ModeToggle } from '@/components/mode-toggle.jsx';
+import { Button } from '@/components/ui/button';
 
 import { useMediaQuery, query } from '@/hooks/use-media-query.js';
 

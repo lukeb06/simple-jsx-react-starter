@@ -4,12 +4,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import '@/global.css';
 import '@/index.scss';
 
-import { ThemeProvider } from '@/Components/theme-provider.jsx';
+import { ThemeProvider } from '@/components/theme-provider.jsx';
 import { StoreProvider } from '@/hooks/use-store.jsx';
 
 import App from '@/Pages/App.jsx';
 
-import Navbar from '@/Components/Navbar.jsx';
+import Navbar from '@/components/Navbar.jsx';
 
 const ROOT = document.getElementById('root');
 
