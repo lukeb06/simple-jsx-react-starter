@@ -5,6 +5,7 @@ import './global.css';
 import './index.scss';
 
 import { ThemeProvider } from './Components/theme-provider.jsx';
+import { StoreProvider } from './hooks/use-store.jsx';
 
 import App from './Pages/App.jsx';
 
@@ -14,12 +15,14 @@ const ROOT = document.getElementById('root');
 
 const ROUTER = (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-        <BrowserRouter>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<App />} />
-            </Routes>
-        </BrowserRouter>
+        <StoreProvider>
+            <BrowserRouter>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<App />} />
+                </Routes>
+            </BrowserRouter>
+        </StoreProvider>
     </ThemeProvider>
 );
 
