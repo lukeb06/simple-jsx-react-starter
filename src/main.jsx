@@ -6,6 +6,7 @@ import '@/index.scss';
 
 import { ThemeProvider } from '@/components/theme-provider.jsx';
 import { StoreProvider } from '@/hooks/use-store.jsx';
+import { LocalStorageProvider } from '@/hooks/use-local-storage.jsx';
 
 import App from '@/Pages/App.jsx';
 
@@ -16,12 +17,14 @@ const ROOT = document.getElementById('root');
 const ROUTER = (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
         <StoreProvider>
-            <BrowserRouter>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<App />} />
-                </Routes>
-            </BrowserRouter>
+            <LocalStorageProvider>
+                <BrowserRouter>
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<App />} />
+                    </Routes>
+                </BrowserRouter>
+            </LocalStorageProvider>
         </StoreProvider>
     </ThemeProvider>
 );
