@@ -16,11 +16,11 @@ function useAPI(url) {
 
         const fetchData = async () => {
             try {
-                const data = await fetcher(url);
-                if (data.error) {
-                    throw new Error(data.error);
+                const _data = await fetcher(url);
+                if (_data.error) {
+                    throw new Error(_data.error);
                 }
-                setData(data);
+                setData(_data);
                 setIsLoading(false);
             } catch (error) {
                 setError(error.message);
