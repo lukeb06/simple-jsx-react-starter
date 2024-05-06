@@ -84,17 +84,6 @@ const NavbarMenu = () => {
                         </Button>
                     </NavigationMenuItem>
 
-                    <NavigationMenuItem
-                        className={`!ml-0 ${useDesktop ? '' : 'w-full'}`}>
-                        <Button
-                            className={useDesktop ? '' : 'w-full'}
-                            onClick={setPage}
-                            asChild
-                            variant={useDesktop ? 'ghost' : 'outline'}>
-                            <Link to="/test">Test</Link>
-                        </Button>
-                    </NavigationMenuItem>
-
                     <div className="flex flex-grow flex-col-reverse md:flex-row-reverse">
                         <NavigationMenuItem>
                             <ModeToggle />
