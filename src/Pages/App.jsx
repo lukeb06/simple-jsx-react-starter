@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useStore } from '@/hooks/use-store.jsx';
 
-import APIStatus from '@/components/APIStatus.jsx';
+import APIStatus from '@/Components/APIStatus.jsx';
 
 const App = () => {
 	const [store, setStore] = useStore();
