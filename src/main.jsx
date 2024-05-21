@@ -15,22 +15,22 @@ import Navbar from '@/components/Navbar.jsx';
 const ROOT = document.getElementById('root');
 
 const ROUTER = (
-    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-        <StoreProvider>
-            <LocalStorageProvider>
-                <BrowserRouter>
-                    <Navbar />
-                    <Routes>
-                        <Route path="/" element={<App />} />
-                    </Routes>
-                </BrowserRouter>
-            </LocalStorageProvider>
-        </StoreProvider>
-    </ThemeProvider>
+	<ThemeProvider defaultTheme='system' storageKey='vite-ui-theme'>
+		<StoreProvider>
+			<LocalStorageProvider>
+				<BrowserRouter>
+					<Navbar />
+					<Routes>
+						<Route path='/' element={<App />} />
+					</Routes>
+				</BrowserRouter>
+			</LocalStorageProvider>
+		</StoreProvider>
+	</ThemeProvider>
 );
 
 if (ROOT.hasChildNodes()) {
-    ReactDOM.hydrateRoot(ROUTER, ROOT);
+	ReactDOM.hydrateRoot(ROUTER, ROOT);
 } else {
-    ReactDOM.createRoot(ROOT).render(ROUTER);
+	ReactDOM.createRoot(ROOT).render(ROUTER);
 }
