@@ -19,5 +19,7 @@ module.exports = {
     "no-unused-vars": "warn",
     "react-refresh/only-export-components": "off",
     "react/prop-types": "off",
+    "no-undef": "off",
+    "no-inner-declarations": "off",
   },
 }
