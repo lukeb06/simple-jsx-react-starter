@@ -11,7 +11,7 @@
 		"vite:preview": "vite preview",
 		"preview": "vite preview --host --port 5173",
 		"start": "concurrently --kill-others \"npm run preview\" \"npm run nodemon\"",
-		"vite:dev": "vite --host"
+		"vite:dev": "vite --host --port 5173"
 	},
 	"dependencies": {
 		"@radix-ui/react-dialog": "^1.0.5",
@@ -21,6 +21,7 @@
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"cors": "^2.8.5",
+		"dotenv": "^16.4.5",
 		"express": "^4.19.2",
 		"lucide-react": "^0.376.0",
 		"react": "^18.2.0",

@@ -1,6 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
+const ok = true;
 
 app.use((req, res, next) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
@@ -15,8 +17,10 @@ app.use((req, res, next) => {
 });
 
 app.get('/status', (req, res) => {
-	res.status(200).json({ status: 'API active' });
+	res.status(200).json({ ok });
 });
+
+app.use(express.json());
 
 app.listen(PORT, () => {
 	console.log(`API active on port ${PORT}`);
