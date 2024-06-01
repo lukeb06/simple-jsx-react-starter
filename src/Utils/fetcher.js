@@ -1,7 +1,9 @@
-let API_URL = atob(sessionStorage.getItem(btoa('API_URL')));
+let API_PORT;
+let API_URL = sessionStorage.getItem(btoa('API_URL'));
+if (API_URL) API_URL = atob(API_URL);
 let endpoint = null;
 
-if (API_PORT && API_URL) endpoint = path => `${API_URL}${path}`;
+if (API_URL) endpoint = path => `${API_URL}${path}`;
 
 const getPORT = async () => {
 	const response = await fetch('/config.json');

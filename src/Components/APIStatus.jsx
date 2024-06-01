@@ -6,7 +6,19 @@ import LoadSpinner from '@/Components/LoadSpinner.jsx';
 const APIStatus = () => {
 	const { data, isLoading, error } = useAPI('status');
 
-	return <>{isLoading ? <LoadSpinner /> : error ? error : data?.status}</>;
+	return (
+		<>
+			{isLoading ? (
+				<LoadSpinner />
+			) : error ? (
+				error
+			) : data?.ok ? (
+				'API Active'
+			) : (
+				'Something went wrong...'
+			)}
+		</>
+	);
 };
 
 export default APIStatus;
