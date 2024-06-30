@@ -9,9 +9,9 @@
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"pretty": "npx prettier . --write",
 		"vite:preview": "vite preview",
-		"preview": "vite preview --host --port 5173",
+		"preview": "vite preview --host --port 5170",
 		"start": "concurrently --kill-others \"npm run preview\" \"npm run nodemon\"",
-		"vite:dev": "vite --host --port 5173"
+		"vite:dev": "vite --host --port 5170"
 	},
 	"dependencies": {
 		"@radix-ui/react-dialog": "^1.0.5",

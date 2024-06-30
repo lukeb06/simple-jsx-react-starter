@@ -30,6 +30,7 @@ const fetcher = async (path, options = {}, textMode = false) => {
 	return new Promise(async (resolve, reject) => {
 		try {
 			const response = await fetch(endpoint(path), options);
+			if (!response.ok) throw new Error(response.statusText);
 			const data = textMode
 				? await response.text()
 				: await response.json();

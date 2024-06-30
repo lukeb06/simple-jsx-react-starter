@@ -3,25 +3,11 @@ import { Link } from 'react-router-dom';
 
 import {
 	NavigationMenu,
-	NavigationMenuContent,
-	NavigationMenuIndicator,
 	NavigationMenuItem,
-	NavigationMenuLink,
 	NavigationMenuList,
-	NavigationMenuTrigger,
-	NavigationMenuViewport,
 } from '@/Components/ui/navigation-menu';
 
-import {
-	Sheet,
-	SheetContent,
-	SheetDescription,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
-} from '@/Components/ui/sheet';
-
-import { navigationMenuTriggerStyle } from '@/Components/ui/navigation-menu';
+import { Sheet, SheetContent, SheetTrigger } from '@/Components/ui/sheet';
 
 import { ModeToggle } from '@/Components/mode-toggle.jsx';
 import { Button } from '@/Components/ui/button';
@@ -67,7 +53,8 @@ const NavbarMenu = () => {
                 }
 
                 nav a[${currentPage}].w-full {
-                    border-color: hsl(var(--primary)) !important;
+                    background-color: hsl(var(--primary)) !important;
+					color: hsl(var(--primary-foreground)) !important;
                 }
             `}</style>
 
@@ -86,6 +73,19 @@ const NavbarMenu = () => {
 						</Button>
 					</NavigationMenuItem>
 
+					<NavigationMenuItem
+						className={`!ml-0 ${useDesktop ? '' : 'w-full'}`}
+					>
+						<Button
+							className={useDesktop ? '' : 'w-full'}
+							onClick={setPage}
+							asChild
+							variant={useDesktop ? 'ghost' : 'outline'}
+						>
+							<Link to="/test">Test</Link>
+						</Button>
+					</NavigationMenuItem>
+
 					<div className="flex flex-grow flex-col-reverse md:flex-row-reverse">
 						<NavigationMenuItem>
 							<ModeToggle />
@@ -97,7 +97,7 @@ const NavbarMenu = () => {
 	);
 };
 
-const MobileNavbar = ({ setPage }) => {
+const MobileNavbar = () => {
 	return (
 		<NavigationMenu className="sticky top-0 p-2 z-50 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 			<NavigationMenuList className="w-full justify-normal">

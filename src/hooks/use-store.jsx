@@ -9,8 +9,12 @@ export const StoreProvider = ({ children }) => {
 		setState({ ...state, [key]: value });
 	};
 
+	const modify = newState => {
+		setState({ ...state, ...newState });
+	};
+
 	return (
-		<StoreContext.Provider value={[state, set]}>
+		<StoreContext.Provider value={[state, set, modify]}>
 			{children}
 		</StoreContext.Provider>
 	);

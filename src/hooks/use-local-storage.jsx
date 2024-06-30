@@ -18,8 +18,14 @@ export const LocalStorageProvider = ({ children }) => {
 		setState(newState);
 	};
 
+	const modify = newState => {
+		const updatedState = { ...state, ...newState };
+		localStorage.setItem('state', JSON.stringify(updatedState));
+		setState(updatedState);
+	};
+
 	return (
-		<LocalStorageContext.Provider value={[state, set]}>
+		<LocalStorageContext.Provider value={[state, set, modify]}>
 			{children}
 		</LocalStorageContext.Provider>
 	);

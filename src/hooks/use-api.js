@@ -23,7 +23,7 @@ function useAPI(url) {
 				setData(_data);
 				setIsLoading(false);
 			} catch (error) {
-				setError(error.message);
+				setError(error?.message || error);
 				setIsLoading(false);
 			}
 		};
