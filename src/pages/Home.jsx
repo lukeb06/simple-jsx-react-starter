@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React from 'react';
 
 import APIStatus from '@/components/APIStatus.jsx';
 
-const App = () => {
+const Home = () => {
 	return (
 		<>
 			<h1 className="font-bold text-4xl text-center">
@@ -12,4 +12,4 @@ const App = () => {
 	);
 };
 
-export default App;
+export default Home;

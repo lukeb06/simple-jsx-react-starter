@@ -8,7 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider.jsx';
 import { StoreProvider } from '@/hooks/use-store.jsx';
 import { LocalStorageProvider } from '@/hooks/use-local-storage.jsx';
 
-import App from '@/pages/App.jsx';
+import Home from '@/pages/Home.jsx';
 
 import Navbar from '@/components/Navbar.jsx';
 
@@ -22,7 +22,7 @@ const LAYOUT = (
 					<Navbar />
 					<main className="py-4 pb-8 max-w-[1200px] mx-auto px-4 md:px-12 grid place-items-center overflow-hidden">
 						<Routes>
-							<Route path="/" element={<App />} />
+							<Route path="/" element={<Home />} />
 						</Routes>
 					</main>
 				</BrowserRouter>

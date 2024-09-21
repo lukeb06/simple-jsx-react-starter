@@ -16,6 +16,23 @@ import { useMediaQuery, query } from '@/hooks/use-media-query.js';
 
 import { Menu } from 'lucide-react';
 
+/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////// Navbar Config /////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+const NAVBAR_CONFIG = {
+	links: [
+		{
+			name: 'Home',
+			href: '/',
+		},
+	],
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
 const parseHref = href => {
 	return `href="${href}"`;
 };
@@ -60,18 +77,21 @@ const NavbarMenu = () => {
 
 			<NavigationMenu className="md:p-2 z-50 h-full md:h-fit w-fit md:w-full md:border-b md:border-border md:bg-background">
 				<NavigationMenuList className="w-fit h-full md:h-fit md:w-full flex-col md:flex-row gap-3 overflow-y-auto md:overflow-y-hidden py-4 md:py-0">
-					<NavigationMenuItem
-						className={`!ml-0 ${useDesktop ? '' : 'w-full'}`}
-					>
-						<Button
-							className={useDesktop ? '' : 'w-full'}
-							onClick={setPage}
-							asChild
-							variant={useDesktop ? 'ghost' : 'outline'}
+					{NAVBAR_CONFIG.links.map((link, index) => (
+						<NavigationMenuItem
+							key={index}
+							className={`!ml-0 ${useDesktop ? '' : 'w-full'}`}
 						>
-							<Link to="/">Home</Link>
-						</Button>
-					</NavigationMenuItem>
+							<Button
+								className={useDesktop ? '' : 'w-full'}
+								onClick={setPage}
+								asChild
+								variant={useDesktop ? 'ghost' : 'outline'}
+							>
+								<Link to={link.href}>{link.name}</Link>
+							</Button>
+						</NavigationMenuItem>
+					))}
 
 					<div className="flex flex-grow flex-col-reverse md:flex-row-reverse">
 						<NavigationMenuItem>
