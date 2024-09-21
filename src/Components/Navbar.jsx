@@ -5,12 +5,12 @@ import {
 	NavigationMenu,
 	NavigationMenuItem,
 	NavigationMenuList,
-} from '@/Components/ui/navigation-menu';
+} from '@/components/ui/navigation-menu';
 
-import { Sheet, SheetContent, SheetTrigger } from '@/Components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
-import { ModeToggle } from '@/Components/mode-toggle.jsx';
-import { Button } from '@/Components/ui/button';
+import { ModeToggle } from '@/components/mode-toggle.jsx';
+import { Button } from '@/components/ui/button';
 
 import { useMediaQuery, query } from '@/hooks/use-media-query.js';
 
@@ -58,7 +58,7 @@ const NavbarMenu = () => {
                 }
             `}</style>
 
-			<NavigationMenu className="md:sticky md:top-0 md:p-2 z-50 h-full md:h-fit w-fit md:w-full md:border-b md:border-border/40 md:bg-background/95 md:backdrop-blur md:supports-[backdrop-filter]:bg-background/60">
+			<NavigationMenu className="md:p-2 z-50 h-full md:h-fit w-fit md:w-full md:border-b md:border-border md:bg-background">
 				<NavigationMenuList className="w-fit h-full md:h-fit md:w-full flex-col md:flex-row gap-3 overflow-y-auto md:overflow-y-hidden py-4 md:py-0">
 					<NavigationMenuItem
 						className={`!ml-0 ${useDesktop ? '' : 'w-full'}`}
@@ -86,7 +86,7 @@ const NavbarMenu = () => {
 
 const MobileNavbar = () => {
 	return (
-		<NavigationMenu className="sticky top-0 p-2 z-50 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+		<NavigationMenu className="p-2 z-50 border-b border-border bg-background">
 			<NavigationMenuList className="w-full justify-normal">
 				<NavigationMenuItem>
 					<Sheet>

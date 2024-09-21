@@ -12,12 +12,6 @@ export const LocalStorageProvider = ({ children }) => {
 		}
 	}, []);
 
-	const set = (key, value) => {
-		const newState = { ...state, [key]: value };
-		localStorage.setItem('state', JSON.stringify(newState));
-		setState(newState);
-	};
-
 	const modify = newState => {
 		const updatedState = { ...state, ...newState };
 		localStorage.setItem('state', JSON.stringify(updatedState));
@@ -25,7 +19,7 @@ export const LocalStorageProvider = ({ children }) => {
 	};
 
 	return (
-		<LocalStorageContext.Provider value={[state, set, modify]}>
+		<LocalStorageContext.Provider value={[state, modify]}>
 			{children}
 		</LocalStorageContext.Provider>
 	);

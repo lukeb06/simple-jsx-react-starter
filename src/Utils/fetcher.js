@@ -25,20 +25,69 @@ const generateEndpoint = async () => {
 	return;
 };
 
-const fetcher = async (path, options = {}, textMode = false) => {
-	if (endpoint == null) await generateEndpoint();
-	return new Promise(async (resolve, reject) => {
-		try {
-			const response = await fetch(endpoint(path), options);
-			if (!response.ok) throw new Error(response.statusText);
-			const data = textMode
-				? await response.text()
-				: await response.json();
-			resolve(data);
-		} catch (e) {
-			reject(e);
-		}
-	});
-};
+class Fetcher {
+	static ResponseMode = {
+		JSON: 'json',
+		TEXT: 'text',
+		RES: 'res',
+	};
 
-export default fetcher;
+	static defaultOptions = {};
+	static defaultHeaders = {};
+
+	static async request(
+		path,
+		method = 'GET',
+		options = {},
+		responseMode = Fetcher.ResponseMode.JSON,
+	) {
+		if (endpoint == null) await generateEndpoint();
+		return new Promise(async (resolve, reject) => {
+			try {
+				const response = await fetch(endpoint(path), {
+					method,
+					...Fetcher.defaultOptions,
+					...options,
+					headers: {
+						...Fetcher.defaultHeaders,
+						...options.headers,
+					},
+				});
+				if (!response.ok) throw new Error(response.statusText);
+
+				if (responseMode === Fetcher.ResponseMode.RES)
+					return resolve(response);
+
+				const data =
+					responseMode === Fetcher.ResponseMode.TEXT
+						? await response.text()
+						: await response.json();
+				resolve(data);
+			} catch (e) {
+				reject(e);
+			}
+		});
+	}
+
+	static get(path, options = {}, responseMode = Fetcher.ResponseMode.JSON) {
+		return Fetcher.request(path, 'GET', options, responseMode);
+	}
+
+	static post(path, options = {}, responseMode = Fetcher.ResponseMode.JSON) {
+		return Fetcher.request(path, 'POST', options, responseMode);
+	}
+
+	static put(path, options = {}, responseMode = Fetcher.ResponseMode.JSON) {
+		return Fetcher.request(path, 'PUT', options, responseMode);
+	}
+
+	static delete(
+		path,
+		options = {},
+		responseMode = Fetcher.ResponseMode.JSON,
+	) {
+		return Fetcher.request(path, 'DELETE', options, responseMode);
+	}
+}
+
+export default Fetcher;

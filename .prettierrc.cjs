@@ -7,7 +7,7 @@ module.exports = {
 	endOfLine: 'lf',
 	tabWidth: 4,
 	semi: true,
-	printWidth: 80,
+	printWidth: 100,
 	useTabs: true,
 	jsxSingleQuote: false,
 	quoteProps: 'as-needed',

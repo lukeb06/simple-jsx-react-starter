@@ -5,16 +5,12 @@ const StoreContext = createContext();
 export const StoreProvider = ({ children }) => {
 	const [state, setState] = useState({});
 
-	const set = (key, value) => {
-		setState({ ...state, [key]: value });
-	};
-
 	const modify = newState => {
 		setState({ ...state, ...newState });
 	};
 
 	return (
-		<StoreContext.Provider value={[state, set, modify]}>
+		<StoreContext.Provider value={[state, modify]}>
 			{children}
 		</StoreContext.Provider>
 	);

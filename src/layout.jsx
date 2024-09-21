@@ -4,25 +4,27 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import '@/global.css';
 import '@/index.scss';
 
-import { ThemeProvider } from '@/Components/theme-provider.jsx';
+import { ThemeProvider } from '@/components/theme-provider.jsx';
 import { StoreProvider } from '@/hooks/use-store.jsx';
 import { LocalStorageProvider } from '@/hooks/use-local-storage.jsx';
 
-import App from '@/Pages/App.jsx';
+import App from '@/pages/App.jsx';
 
-import Navbar from '@/Components/Navbar.jsx';
+import Navbar from '@/components/Navbar.jsx';
 
 const ROOT = document.getElementById('root');
 
-const ROUTER = (
-	<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+const LAYOUT = (
+	<ThemeProvider defaultTheme="system" storageKey="ui-theme">
 		<StoreProvider>
 			<LocalStorageProvider>
 				<BrowserRouter>
 					<Navbar />
-					<Routes>
-						<Route path="/" element={<App />} />
-					</Routes>
+					<main className="py-4 pb-8 max-w-[1200px] mx-auto px-4 md:px-12 grid place-items-center overflow-hidden">
+						<Routes>
+							<Route path="/" element={<App />} />
+						</Routes>
+					</main>
 				</BrowserRouter>
 			</LocalStorageProvider>
 		</StoreProvider>
@@ -30,7 +32,7 @@ const ROUTER = (
 );
 
 if (ROOT.hasChildNodes()) {
-	ReactDOM.hydrateRoot(ROUTER, ROOT);
+	ReactDOM.hydrateRoot(LAYOUT, ROOT);
 } else {
-	ReactDOM.createRoot(ROOT).render(ROUTER);
+	ReactDOM.createRoot(ROOT).render(LAYOUT);
 }

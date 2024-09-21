@@ -1,21 +1,14 @@
 import useAPI from '@/hooks/use-api.js';
-import LoadSpinner from '@/Components/LoadSpinner.jsx';
-import { APIData, APIError, APILoading } from '@/Components/APIConditional.jsx';
+import LoadSpinner from '@/components/LoadSpinner.jsx';
 
 const APIStatus = () => {
-	const statusResponse = useAPI('status');
+	const { data: status, error, isLoading } = useAPI('status');
 
 	return (
 		<>
-			<APIData APIState={statusResponse}>API Active</APIData>
-
-			<APIError APIState={statusResponse}>
-				Something went wrong...
-			</APIError>
-
-			<APILoading APIState={statusResponse}>
-				<LoadSpinner />
-			</APILoading>
+			{status && !error && !isLoading ? 'API Active' : <></>}
+			{isLoading && !error ? <LoadSpinner /> : <></>}
+			{!isLoading && error ? 'Something went wrong...' : <></>}
 		</>
 	);
 };

@@ -42,22 +42,34 @@
 }
 
 body {
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
-body.no-scroll {
+#root {
+	display: grid;
+	grid-template-rows: auto 1fr;
 	height: 100vh;
 	overflow: hidden;
-
-	#root {
-		height: 100%;
-	}
-
-	nav {
-		position: absolute !important;
-		top: 0 !important;
-	}
 }
+
+main {
+	width: 100%;
+	overflow: auto;
+}
+
+// body.no-scroll {
+// 	height: 100vh;
+// 	overflow: hidden;
+
+// 	#root {
+// 		height: 100%;
+// 	}
+
+// 	nav {
+// 		position: absolute !important;
+// 		top: 0 !important;
+// 	}
+// }
 
 nav > div {
 	width: 100%;

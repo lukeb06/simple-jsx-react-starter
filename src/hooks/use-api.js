@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import fetcher from '@/Utils/fetcher.js';
+import Fetcher from '@/utils/fetcher.js';
 
 function useAPI(url) {
 	const [data, setData] = useState(null);
@@ -16,7 +16,7 @@ function useAPI(url) {
 
 		const fetchData = async () => {
 			try {
-				const _data = await fetcher(url);
+				const _data = await Fetcher.get(url);
 				if (_data.error) {
 					throw new Error(_data.error);
 				}
